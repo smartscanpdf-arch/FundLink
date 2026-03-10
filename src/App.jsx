@@ -563,18 +563,6 @@ const NotificationsPage = ({ nav }) => {
   );
 };
 
-// ─── SHARED HOOKS ────────────────────────────────────────────────────────────
-const useIsMobile = (bp=768) => {
-  const [mobile, setMobile] = useState(typeof window!=="undefined"?window.innerWidth<bp:false);
-  useEffect(()=>{
-    const fn=()=>setMobile(window.innerWidth<bp);
-    fn();
-    window.addEventListener("resize",fn);
-    return ()=>window.removeEventListener("resize",fn);
-  },[bp]);
-  return mobile;
-};
-
 // ─── TOPBAR ───────────────────────────────────────────────────────────────────
 const TopBar = ({ title, onMenu, dark=false, nav, onHelp }) => {
   const [notifOpen, setNotifOpen] = useState(false);
@@ -1337,7 +1325,7 @@ const FounderDash = ({ nav }) => {
                 {key:"deck",     icon:"📄", label:"Upload your pitch deck",             cta:"Go to Docs",    fn:()=>setPage("docs")},
                 {key:"dataroom", icon:"🔐", label:"Set up your data room",              cta:"Open Data Room",fn:()=>setPage("docs")},
                 {key:"event",    icon:"📅", label:"Register for an upcoming event",     cta:"Browse Events", fn:()=>setPage("events")},
-                {key:"notifs",   icon:"🔔", label:"Enable email notifications",         cta:"Settings",      fn:()=>setPage("gear")},
+                {key:"notifs",   icon:"����", label:"Enable email notifications",         cta:"Settings",      fn:()=>setPage("gear")},
               ].map((item,i,arr)=>(
                 <div key={item.key} style={{ display:"flex",alignItems:"center",gap:12,padding:"11px 18px",borderBottom:i<arr.length-1?`1px solid ${C.slateXL}`:"none",opacity:checklistDone[item.key]?0.5:1,transition:"opacity 0.2s" }}>
                   <div onClick={()=>setChecklistDone(p=>{ const next=!p[item.key]; if(next) toast(item.label+" ✓","success"); return {...p,[item.key]:next}; })}
