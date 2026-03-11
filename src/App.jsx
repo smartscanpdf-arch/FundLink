@@ -1718,7 +1718,7 @@ const InvestorDash = ({ nav }) => {
   const startups = [
     {name:"GreenTech Solutions", sector:"CleanTech",  stage:"Seed",        ask:"₹2.5 Cr", mrr:"₹18L",   users:"2.4K", growth:"28%", verified:true},
     {name:"MediAI",              sector:"HealthTech", stage:"Pre-Series A",ask:"₹5 Cr",   mrr:"₹32L",   users:"8.1K", growth:"41%", verified:true},
-    {name:"AgriLink",            sector:"AgriTech",   stage:"Seed",        ask:"₹1.8 Cr", mrr:"₹9L",    users:"1.2K", growth:"19%", verified:false},
+    {name:"AgriLink",            sector:"AgriTech",   stage:"Seed",        ask:"���1.8 Cr", mrr:"₹9L",    users:"1.2K", growth:"19%", verified:false},
     {name:"EduNation",           sector:"EdTech",     stage:"Pre-Seed",    ask:"₹80L",    mrr:"₹4L",    users:"3.5K", growth:"55%", verified:true},
     {name:"FinEase",             sector:"FinTech",    stage:"Series A",    ask:"₹15 Cr",  mrr:"₹1.2Cr", users:"45K",  growth:"22%", verified:true},
     {name:"LogiTrack",           sector:"Logistics",  stage:"Seed",        ask:"₹3 Cr",   mrr:"₹21L",   users:"500",  growth:"33%", verified:false},
@@ -7321,7 +7321,7 @@ const AdminCouponsPage = ({ nav }) => {
 };
 
 // ─── DEMO NAV + ROOT ──────────────────────────────────────────────────────────
-// ─── ADMIN PAYMENT SETUP PAGE ────────────────────────────────────────────────
+// ─── ADMIN PAYMENT SETUP PAGE ──────────────────────────────────────────��─────
 const AdminPaymentPage = ({ nav }) => {
   const [sidebar,       setSidebar]       = useState(false);
   const [activeTab,     setActiveTab]     = useState("gateway");
@@ -9574,27 +9574,7 @@ export default function App() {
         input,select,textarea,button{font-family:'DM Sans',sans-serif;}
       `}</style>
 
-      {/* Demo switcher */}
-      <div style={{ position:"fixed",top:0,left:0,right:0,zIndex:9999,
-        background:C.navy,borderBottom:"1px solid rgba(255,255,255,0.08)",
-        display:"flex",alignItems:"center",gap:4,padding:"5px 12px",
-        overflowX:"auto",boxShadow:"0 2px 12px rgba(0,0,0,0.25)" }}>
-        <span style={{ color:"rgba(255,255,255,0.25)",fontSize:10,fontWeight:700,
-          letterSpacing:"0.1em",whiteSpace:"nowrap",marginRight:4 }}>DEMO:</span>
-        {demoPages.map(([id,label])=>(
-          <button key={id} onClick={()=>setPage(id)}
-            style={{ padding:"4px 10px",borderRadius:6,border:"none",
-              background:page===id?C.teal:"rgba(255,255,255,0.07)",
-              color:page===id?"#fff":"rgba(255,255,255,0.5)",
-              fontSize:11,fontWeight:600,cursor:"pointer",
-              whiteSpace:"nowrap",fontFamily:"'DM Sans',sans-serif",
-              transition:"all 0.15s" }}>
-            {label}
-          </button>
-        ))}
-      </div>
-
-      <div style={{ paddingTop:34 }}>
+      <div style={{ paddingTop:0 }}>
         {render()}
       </div>
     </ToastProvider>
